@@ -7,11 +7,22 @@
             @endforeach 
         </ul>
     </div>
-    <form action="">
+
+    @if(session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+    @endif
+    <form method="post" action="{{ url('/store-project') }}">
         @csrf
         <div style="display: flex; flex-direction: column; align-items: flex-start">
-            <label for="custom_domain">Custom domain</label>
-            <input type="text" id="custom_domain" name="custom_domain">
+            <h2>Create Project</h2>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title">
+            <label for="url">Url</label>
+            <input type="text" id="url" name="url">
+            <!-- <label for="custom_domain">Custom domain</label>
+            <input type="text" id="custom_domain" name="custom_domain"> -->
             <button type="submit" style="margin-top: 10px">Save</button>
         </div>
     </form>

@@ -27,5 +27,20 @@ class IndexController extends Controller
         return view('single')->with('project', $project);
     }
 
+    /**
+     * Store project
+     */
+    public function storeProject(Request $request)
+    {
+        $project = Project::create([
+            'title' => $request->title,
+            'url' => $request->url,
+        ]);
+
+        $project->save();
+
+        return redirect()->back()->with('status', 'Project created successfully.');
+    }
+
 
 }

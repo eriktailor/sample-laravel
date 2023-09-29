@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 // projects
 Route::get('/projects', [IndexController::class, 'listProjects']);
+Route::post('/store-project', [IndexController::class, 'storeProject']);
 
 // subdomains
 //Route::domain('preview.'.env('APP_URL'))->group(function() {
