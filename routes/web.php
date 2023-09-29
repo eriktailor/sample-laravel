@@ -22,6 +22,6 @@ Route::get('/', function () {
 Route::get('/projects', [IndexController::class, 'listProjects']);
 
 // subdomains
-Route::domain('preview.'.env('APP_URL'))->group(function() {
+//Route::domain('preview.'.env('APP_URL'))->group(function() {
     Route::get('/{url}', [IndexController::class, 'publishProject']);
-});
+//});
