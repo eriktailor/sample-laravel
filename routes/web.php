@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+// projects
+Route::get('/projects', [IndexController::class, 'listProjects']);
+
+// subdomains
+Route::domain('preview.'.env('APP_URL'))->group(function() {
+    Route::get('/{url}', [IndexController::class, 'publishProject']);
 });
