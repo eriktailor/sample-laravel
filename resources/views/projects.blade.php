@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column">
     <div style="display: flex; flex-direction: column; align-items: flex-start">
         <h1 style="margin-bottom: 0">Projects</h1>
@@ -27,3 +30,4 @@
         </div>
     </form>
 </div>
+@endsection
